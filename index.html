@@ -77,6 +77,38 @@
         gap: 10px;
       }
 
+      .search-wrap {
+        margin-top: 16px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .search-label {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .search-input {
+        width: 100%;
+        border: 1px solid #cfc5b6;
+        border-radius: 12px;
+        background: #fff;
+        color: var(--ink);
+        font: inherit;
+        font-size: 15px;
+        padding: 10px 12px;
+      }
+
+      .search-input:focus {
+        outline: 2px solid #d5e6e9;
+        border-color: #9abec6;
+      }
+
+      .search-note {
+        font-size: 12px;
+        color: #7a7368;
+      }
+
       .chip {
         display: inline-flex;
         align-items: center;
@@ -123,6 +155,21 @@
       .grid {
         display: grid;
         gap: 12px;
+      }
+
+      .project-card[hidden],
+      .project-section[hidden] {
+        display: none !important;
+      }
+
+      .empty {
+        margin-top: 16px;
+        border: 1px dashed #cbbfaa;
+        border-radius: 12px;
+        background: #faf5eb;
+        color: #635c4f;
+        font-size: 14px;
+        padding: 12px;
       }
 
       .card {
@@ -205,24 +252,26 @@
       <section class="hero">
         <p class="eyebrow">Portfolio Hub</p>
         <h1 class="title">liiilhhh02 · 项目总导航</h1>
-        <p class="subtitle">
-          个人网页已按仓库性质分组，覆盖「心理测评产品」「效率工具」「展示分享」三个方向，
-          方便统一访问、对外分享与后续扩展。
-        </p>
+        <p class="subtitle">欢迎访问我的公开网页项目入口，可按主题快速浏览并打开对应站点。</p>
         <div class="meta">
           <span class="chip badge">HITSZ Auto 在读</span>
           <a class="chip" href="mailto:liiilhhh02@gmail.com">liiilhhh02@gmail.com</a>
           <a class="chip" href="https://github.com/liiilhhh02" target="_blank" rel="noopener noreferrer">GitHub / liiilhhh02</a>
         </div>
+        <div class="search-wrap">
+          <label class="search-label" for="search-input">搜索项目（名称 / 描述 / 标签）</label>
+          <input id="search-input" class="search-input" type="search" placeholder="例如：心理、工具、分享、报告" />
+          <div class="search-note" id="search-note">输入关键词可实时筛选。</div>
+        </div>
       </section>
 
-      <section class="section">
+      <section class="section project-section" data-section="心理测评与行为分析">
         <div class="section-head">
           <h2 class="section-title">A. 心理测评与行为分析</h2>
           <p class="section-desc">产品原型 / 报告系统</p>
         </div>
         <div class="grid">
-          <a class="card" href="https://liiilhhh02.github.io/PsychologicalTest/" target="_blank" rel="noopener noreferrer">
+          <a class="card project-card" href="https://liiilhhh02.github.io/PsychologicalTest/" target="_blank" rel="noopener noreferrer">
             <div>
               <div class="name">PsychologicalTest</div>
               <div class="desc">多套题心理偏好测试，支持可视化报告、典型画像和导出。</div>
@@ -237,13 +286,13 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section project-section" data-section="工具与效率页面">
         <div class="section-head">
           <h2 class="section-title">B. 工具与效率页面</h2>
           <p class="section-desc">轻量工具 / 快速访问</p>
         </div>
         <div class="grid">
-          <a class="card" href="https://liiilhhh02.github.io/tools_html/" target="_blank" rel="noopener noreferrer">
+          <a class="card project-card" href="https://liiilhhh02.github.io/tools_html/" target="_blank" rel="noopener noreferrer">
             <div>
               <div class="name">tools_html</div>
               <div class="desc">日常实用网页工具集合，面向轻量任务的快速处理。</div>
@@ -257,13 +306,13 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section project-section" data-section="展示与内容分享">
         <div class="section-head">
           <h2 class="section-title">C. 展示与内容分享</h2>
           <p class="section-desc">活动展示 / 演示页</p>
         </div>
         <div class="grid">
-          <a class="card" href="https://liiilhhh02.github.io/ppt_competition_share/" target="_blank" rel="noopener noreferrer">
+          <a class="card project-card" href="https://liiilhhh02.github.io/ppt_competition_share/" target="_blank" rel="noopener noreferrer">
             <div>
               <div class="name">ppt_competition_share</div>
               <div class="desc">竞赛与汇报场景的页面化内容展示和在线分享入口。</div>
@@ -277,13 +326,13 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section project-section" data-section="仓库入口">
         <div class="section-head">
           <h2 class="section-title">仓库入口</h2>
           <p class="section-desc">全部代码仓库</p>
         </div>
         <div class="grid">
-          <a class="card" href="https://github.com/liiilhhh02?tab=repositories" target="_blank" rel="noopener noreferrer">
+          <a class="card project-card" href="https://github.com/liiilhhh02?tab=repositories" target="_blank" rel="noopener noreferrer">
             <div>
               <div class="name">All Repositories</div>
               <div class="desc">查看全部仓库与最近更新，进入对应代码与文档。</div>
@@ -293,7 +342,45 @@
         </div>
       </section>
 
+      <div id="search-empty" class="empty" hidden>没有匹配到项目，请尝试更换关键词。</div>
+
       <p class="footer">最后更新：2026-02-26 · 持续维护中</p>
     </main>
+    <script>
+      const input = document.getElementById("search-input");
+      const note = document.getElementById("search-note");
+      const empty = document.getElementById("search-empty");
+      const sections = [...document.querySelectorAll(".project-section")];
+      const cards = [...document.querySelectorAll(".project-card")];
+
+      function normalize(text) {
+        return String(text || "").trim().toLowerCase();
+      }
+
+      function applySearch() {
+        const keyword = normalize(input.value);
+        let shown = 0;
+
+        cards.forEach((card) => {
+          const haystack = normalize(card.textContent);
+          const visible = !keyword || haystack.includes(keyword);
+          card.hidden = !visible;
+          if (visible) {
+            shown += 1;
+          }
+        });
+
+        sections.forEach((section) => {
+          const hasVisibleCard = [...section.querySelectorAll(".project-card")].some((card) => !card.hidden);
+          section.hidden = !hasVisibleCard;
+        });
+
+        empty.hidden = shown !== 0;
+        note.textContent = keyword ? `共匹配到 ${shown} 个项目。` : "输入关键词可实时筛选。";
+      }
+
+      input.addEventListener("input", applySearch);
+      applySearch();
+    </script>
   </body>
   </html>
