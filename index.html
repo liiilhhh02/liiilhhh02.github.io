@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>liiilhhh02 · Projects</title>
+    <title>liiilhhh02 · Portfolio</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Noto+Serif+SC:wght@500;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Serif+SC:wght@600;700&display=swap");
 
       :root {
-        --bg: #f4efe6;
-        --card: #fffaf0;
-        --ink: #2d261f;
-        --muted: #6b6258;
-        --line: #d8cdbf;
-        --accent: #b95c36;
-        --accent-soft: #f0dacd;
+        --bg: #f1efe9;
+        --ink: #222019;
+        --muted: #676257;
+        --line: #d9d2c6;
+        --card: #fffdf9;
+        --accent: #0f5b67;
+        --accent-2: #ca6e31;
       }
 
       * {
@@ -23,81 +23,129 @@
 
       body {
         margin: 0;
-        min-height: 100vh;
         color: var(--ink);
-        font-family: "Space Grotesk", sans-serif;
+        font-family: "Manrope", sans-serif;
         background:
-          radial-gradient(circle at 8% 12%, #e7d6bc 0, transparent 26%),
-          radial-gradient(circle at 88% 18%, #dfc4a4 0, transparent 24%),
-          radial-gradient(circle at 70% 86%, #ebd8c4 0, transparent 28%),
+          radial-gradient(circle at 10% 8%, #ddd7c9 0, transparent 24%),
+          radial-gradient(circle at 84% 22%, #d5ccc0 0, transparent 20%),
+          radial-gradient(circle at 70% 86%, #e6ddd0 0, transparent 28%),
           var(--bg);
       }
 
       .wrap {
-        max-width: 980px;
+        max-width: 1020px;
         margin: 0 auto;
         padding: 28px 18px 56px;
       }
 
       .hero {
         border: 1px solid var(--line);
-        border-radius: 18px;
-        background: linear-gradient(145deg, #fff8ee 0%, #f7ecdd 100%);
-        padding: 24px 22px;
-        box-shadow: 0 10px 28px rgba(76, 53, 31, 0.08);
-        animation: rise 620ms ease-out both;
+        border-radius: 20px;
+        background: linear-gradient(145deg, #fffefb 0%, #f5f1e8 100%);
+        padding: 22px;
+        box-shadow: 0 14px 30px rgba(32, 28, 20, 0.1);
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-size: 12px;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 800;
       }
 
       .title {
-        margin: 0;
-        font-size: clamp(28px, 5vw, 44px);
+        margin: 10px 0 0;
+        font-size: clamp(30px, 5vw, 48px);
+        line-height: 1.1;
         font-family: "Noto Serif SC", serif;
-        letter-spacing: 0.4px;
       }
 
-      .sub {
+      .subtitle {
         margin: 12px 0 0;
         color: var(--muted);
-        font-size: 15px;
         line-height: 1.7;
+        font-size: 15px;
+        max-width: 760px;
+      }
+
+      .meta {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: #fbf8f2;
+        color: #4e493f;
+        padding: 6px 10px;
+        font-size: 13px;
+        text-decoration: none;
+      }
+
+      .chip.badge {
+        border-color: #c7e1e5;
+        background: #ecf8fa;
+        color: #15515b;
+        font-weight: 700;
+      }
+
+      .section {
+        margin-top: 20px;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: clamp(18px, 3vw, 24px);
+      }
+
+      .section-desc {
+        margin: 0;
+        font-size: 13px;
+        color: var(--muted);
       }
 
       .grid {
-        margin-top: 18px;
         display: grid;
         gap: 12px;
       }
 
       .card {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 12px;
-        align-items: center;
         border: 1px solid var(--line);
         border-radius: 14px;
         background: var(--card);
-        padding: 14px 14px;
+        padding: 13px 14px;
         text-decoration: none;
         color: inherit;
-        transform: translateY(14px);
-        opacity: 0;
-        animation: rise 560ms ease-out forwards;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        align-items: center;
       }
 
-      .card:nth-child(1) { animation-delay: 60ms; }
-      .card:nth-child(2) { animation-delay: 130ms; }
-      .card:nth-child(3) { animation-delay: 200ms; }
-      .card:nth-child(4) { animation-delay: 270ms; }
-      .card:nth-child(5) { animation-delay: 340ms; }
-
       .card:hover {
-        border-color: #c9b6a1;
-        box-shadow: 0 10px 24px rgba(72, 46, 24, 0.1);
+        border-color: #c2b8a7;
+        box-shadow: 0 10px 24px rgba(41, 33, 22, 0.08);
       }
 
       .name {
         font-size: 18px;
-        font-weight: 700;
+        font-weight: 800;
       }
 
       .desc {
@@ -106,76 +154,146 @@
         font-size: 14px;
       }
 
-      .go {
-        white-space: nowrap;
-        font-size: 13px;
+      .tagline {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .tag {
+        border: 1px solid #d8cfbf;
         border-radius: 999px;
-        border: 1px solid #d7c1ac;
-        background: var(--accent-soft);
-        color: var(--accent);
-        padding: 6px 10px;
+        padding: 2px 8px;
+        font-size: 12px;
+        color: #5b5348;
+        background: #faf6ef;
       }
 
-      .foot {
-        margin-top: 14px;
-        color: #766c61;
+      .go {
+        border-radius: 999px;
+        border: 1px solid #b7d2d8;
+        background: #e8f5f7;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+        padding: 6px 10px;
+        white-space: nowrap;
+      }
+
+      .go.secondary {
+        border-color: #e2cdb6;
+        background: #f8ede3;
+        color: var(--accent-2);
+      }
+
+      .footer {
+        margin-top: 18px;
+        color: #746e63;
         font-size: 13px;
       }
 
-      @media (max-width: 680px) {
+      @media (max-width: 760px) {
         .card {
           grid-template-columns: 1fr;
         }
-      }
-
-      @keyframes rise {
-        from { opacity: 0; transform: translateY(14px); }
-        to { opacity: 1; transform: translateY(0); }
       }
     </style>
   </head>
   <body>
     <main class="wrap">
       <section class="hero">
-        <h1 class="title">liiilhhh02 · 总导航页</h1>
-        <p class="sub">这里集中放你所有 GitHub Pages 项目，方便统一展示和分享。</p>
+        <p class="eyebrow">Portfolio Hub</p>
+        <h1 class="title">liiilhhh02 · 项目总导航</h1>
+        <p class="subtitle">
+          个人网页已按仓库性质分组，覆盖「心理测评产品」「效率工具」「展示分享」三个方向，
+          方便统一访问、对外分享与后续扩展。
+        </p>
+        <div class="meta">
+          <span class="chip badge">HITSZ Auto 在读</span>
+          <a class="chip" href="mailto:liiilhhh02@gmail.com">liiilhhh02@gmail.com</a>
+          <a class="chip" href="https://github.com/liiilhhh02" target="_blank" rel="noopener noreferrer">GitHub / liiilhhh02</a>
+        </div>
+      </section>
 
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">A. 心理测评与行为分析</h2>
+          <p class="section-desc">产品原型 / 报告系统</p>
+        </div>
         <div class="grid">
           <a class="card" href="https://liiilhhh02.github.io/PsychologicalTest/" target="_blank" rel="noopener noreferrer">
             <div>
               <div class="name">PsychologicalTest</div>
-              <div class="desc">心理偏好测试站（多套题 + 报告）</div>
+              <div class="desc">多套题心理偏好测试，支持可视化报告、典型画像和导出。</div>
+              <div class="tagline">
+                <span class="tag">心理测评</span>
+                <span class="tag">报告系统</span>
+                <span class="tag">多题库</span>
+              </div>
             </div>
             <span class="go">打开站点</span>
           </a>
+        </div>
+      </section>
 
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">B. 工具与效率页面</h2>
+          <p class="section-desc">轻量工具 / 快速访问</p>
+        </div>
+        <div class="grid">
           <a class="card" href="https://liiilhhh02.github.io/tools_html/" target="_blank" rel="noopener noreferrer">
             <div>
               <div class="name">tools_html</div>
-              <div class="desc">实用工具合集页面</div>
+              <div class="desc">日常实用网页工具集合，面向轻量任务的快速处理。</div>
+              <div class="tagline">
+                <span class="tag">工具集</span>
+                <span class="tag">效率向</span>
+              </div>
             </div>
             <span class="go">打开站点</span>
           </a>
+        </div>
+      </section>
 
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">C. 展示与内容分享</h2>
+          <p class="section-desc">活动展示 / 演示页</p>
+        </div>
+        <div class="grid">
           <a class="card" href="https://liiilhhh02.github.io/ppt_competition_share/" target="_blank" rel="noopener noreferrer">
             <div>
               <div class="name">ppt_competition_share</div>
-              <div class="desc">PPT 展示与分享页</div>
+              <div class="desc">竞赛与汇报场景的页面化内容展示和在线分享入口。</div>
+              <div class="tagline">
+                <span class="tag">展示页</span>
+                <span class="tag">分享</span>
+              </div>
             </div>
             <span class="go">打开站点</span>
           </a>
+        </div>
+      </section>
 
-          <a class="card" href="https://github.com/liiilhhh02" target="_blank" rel="noopener noreferrer">
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">仓库入口</h2>
+          <p class="section-desc">全部代码仓库</p>
+        </div>
+        <div class="grid">
+          <a class="card" href="https://github.com/liiilhhh02?tab=repositories" target="_blank" rel="noopener noreferrer">
             <div>
-              <div class="name">GitHub Profile</div>
-              <div class="desc">查看全部仓库与最近更新</div>
+              <div class="name">All Repositories</div>
+              <div class="desc">查看全部仓库与最近更新，进入对应代码与文档。</div>
             </div>
-            <span class="go">查看主页</span>
+            <span class="go secondary">打开 GitHub</span>
           </a>
         </div>
-
-        <p class="foot">提示：把本页部署到 `liiilhhh02.github.io` 仓库后，即可通过 `https://liiilhhh02.github.io/` 访问。</p>
       </section>
+
+      <p class="footer">最后更新：2026-02-26 · 持续维护中</p>
     </main>
   </body>
   </html>
