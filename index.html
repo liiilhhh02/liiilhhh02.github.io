@@ -3,18 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>liiilhhh02 · Portfolio</title>
+    <title>liiilhhh02 · Projects</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Serif+SC:wght@600;700&display=swap");
 
       :root {
-        --bg: #f1efe9;
-        --ink: #222019;
-        --muted: #676257;
-        --line: #d9d2c6;
+        --bg: #f2efe8;
+        --ink: #1f1d18;
+        --muted: #686256;
+        --line: #d8d0c2;
         --card: #fffdf9;
-        --accent: #0f5b67;
-        --accent-2: #ca6e31;
+        --accent: #0f5f6c;
+        --accent2: #c96f2d;
+        --ok-bg: #ecf7f1;
+        --ok-ink: #1f6a49;
+        --err-bg: #faece8;
+        --err-ink: #9a4332;
       }
 
       * {
@@ -26,14 +30,14 @@
         color: var(--ink);
         font-family: "Manrope", sans-serif;
         background:
-          radial-gradient(circle at 10% 8%, #ddd7c9 0, transparent 24%),
-          radial-gradient(circle at 84% 22%, #d5ccc0 0, transparent 20%),
-          radial-gradient(circle at 70% 86%, #e6ddd0 0, transparent 28%),
+          radial-gradient(circle at 12% 10%, #e2d9cb 0, transparent 25%),
+          radial-gradient(circle at 84% 20%, #d8cec1 0, transparent 22%),
+          radial-gradient(circle at 65% 86%, #e4d9cb 0, transparent 28%),
           var(--bg);
       }
 
       .wrap {
-        max-width: 1020px;
+        max-width: 1060px;
         margin: 0 auto;
         padding: 28px 18px 56px;
       }
@@ -41,40 +45,59 @@
       .hero {
         border: 1px solid var(--line);
         border-radius: 20px;
-        background: linear-gradient(145deg, #fffefb 0%, #f5f1e8 100%);
+        background: linear-gradient(150deg, #fffefb 0%, #f5f0e5 100%);
         padding: 22px;
-        box-shadow: 0 14px 30px rgba(32, 28, 20, 0.1);
+        box-shadow: 0 14px 30px rgba(33, 27, 19, 0.1);
       }
 
       .eyebrow {
         margin: 0;
         font-size: 12px;
-        letter-spacing: 1.6px;
-        text-transform: uppercase;
         color: var(--accent);
+        letter-spacing: 1.4px;
         font-weight: 800;
+        text-transform: uppercase;
       }
 
       .title {
         margin: 10px 0 0;
-        font-size: clamp(30px, 5vw, 48px);
-        line-height: 1.1;
         font-family: "Noto Serif SC", serif;
+        font-size: clamp(30px, 5vw, 48px);
+        line-height: 1.08;
       }
 
       .subtitle {
         margin: 12px 0 0;
         color: var(--muted);
-        line-height: 1.7;
         font-size: 15px;
-        max-width: 760px;
+        line-height: 1.7;
       }
 
-      .meta {
+      .chips {
         margin-top: 14px;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: #fbf8f1;
+        color: #4f4a40;
+        padding: 6px 10px;
+        font-size: 13px;
+        text-decoration: none;
+      }
+
+      .chip.badge {
+        border-color: #c7e2e6;
+        background: #ecf8fa;
+        color: #16515a;
+        font-weight: 700;
       }
 
       .search-wrap {
@@ -100,37 +123,25 @@
       }
 
       .search-input:focus {
-        outline: 2px solid #d5e6e9;
-        border-color: #9abec6;
+        outline: 2px solid #d3e7ea;
+        border-color: #97bdc5;
       }
 
-      .search-note {
+      .meta-row {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        color: #746d61;
         font-size: 12px;
-        color: #7a7368;
       }
 
-      .chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        background: #fbf8f2;
-        color: #4e493f;
-        padding: 6px 10px;
-        font-size: 13px;
-        text-decoration: none;
-      }
-
-      .chip.badge {
-        border-color: #c7e1e5;
-        background: #ecf8fa;
-        color: #15515b;
-        font-weight: 700;
+      .main {
+        margin-top: 20px;
       }
 
       .section {
-        margin-top: 20px;
+        margin-top: 18px;
       }
 
       .section-head {
@@ -148,8 +159,8 @@
 
       .section-desc {
         margin: 0;
-        font-size: 13px;
         color: var(--muted);
+        font-size: 13px;
       }
 
       .grid {
@@ -157,42 +168,51 @@
         gap: 12px;
       }
 
-      .project-card[hidden],
-      .project-section[hidden] {
-        display: none !important;
-      }
-
-      .empty {
-        margin-top: 16px;
-        border: 1px dashed #cbbfaa;
-        border-radius: 12px;
-        background: #faf5eb;
-        color: #635c4f;
-        font-size: 14px;
-        padding: 12px;
-      }
-
       .card {
         border: 1px solid var(--line);
         border-radius: 14px;
         background: var(--card);
         padding: 13px 14px;
-        text-decoration: none;
-        color: inherit;
         display: grid;
         grid-template-columns: 1fr auto;
-        gap: 10px;
+        gap: 12px;
         align-items: center;
       }
 
       .card:hover {
-        border-color: #c2b8a7;
-        box-shadow: 0 10px 24px rgba(41, 33, 22, 0.08);
+        border-color: #c4b9a8;
+        box-shadow: 0 10px 24px rgba(44, 35, 23, 0.09);
+      }
+
+      .name-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
       }
 
       .name {
         font-size: 18px;
         font-weight: 800;
+      }
+
+      .status {
+        border-radius: 999px;
+        padding: 2px 8px;
+        font-size: 12px;
+        border: 1px solid transparent;
+      }
+
+      .status.ok {
+        color: var(--ok-ink);
+        background: var(--ok-bg);
+        border-color: #c8e8d8;
+      }
+
+      .status.err {
+        color: var(--err-ink);
+        background: var(--err-bg);
+        border-color: #ebc7be;
       }
 
       .desc {
@@ -213,11 +233,18 @@
         border-radius: 999px;
         padding: 2px 8px;
         font-size: 12px;
-        color: #5b5348;
+        color: #5e574c;
         background: #faf6ef;
       }
 
-      .go {
+      .go-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-end;
+      }
+
+      .btn {
         border-radius: 999px;
         border: 1px solid #b7d2d8;
         background: #e8f5f7;
@@ -226,23 +253,38 @@
         font-weight: 700;
         padding: 6px 10px;
         white-space: nowrap;
+        text-decoration: none;
       }
 
-      .go.secondary {
+      .btn.repo {
         border-color: #e2cdb6;
         background: #f8ede3;
-        color: var(--accent-2);
+        color: var(--accent2);
+      }
+
+      .empty {
+        margin-top: 16px;
+        border: 1px dashed #cdbfa9;
+        border-radius: 12px;
+        background: #faf5eb;
+        color: #635c4f;
+        font-size: 14px;
+        padding: 12px;
       }
 
       .footer {
         margin-top: 18px;
-        color: #746e63;
+        color: #746d61;
         font-size: 13px;
       }
 
-      @media (max-width: 760px) {
+      @media (max-width: 780px) {
         .card {
           grid-template-columns: 1fr;
+        }
+
+        .go-wrap {
+          align-items: flex-start;
         }
       }
     </style>
@@ -251,9 +293,9 @@
     <main class="wrap">
       <section class="hero">
         <p class="eyebrow">Portfolio Hub</p>
-        <h1 class="title">liiilhhh02 · 项目总导航</h1>
-        <p class="subtitle">欢迎访问我的公开网页项目入口，可按主题快速浏览并打开对应站点。</p>
-        <div class="meta">
+        <h1 class="title">liiilhhh02 · 项目导航</h1>
+        <p class="subtitle">这里收录我的公开网页项目，按主题整理并自动更新。</p>
+        <div class="chips">
           <span class="chip badge">HITSZ Auto 在读</span>
           <a class="chip" href="mailto:liiilhhh02@gmail.com">liiilhhh02@gmail.com</a>
           <a class="chip" href="https://github.com/liiilhhh02" target="_blank" rel="noopener noreferrer">GitHub / liiilhhh02</a>
@@ -261,126 +303,210 @@
         <div class="search-wrap">
           <label class="search-label" for="search-input">搜索项目（名称 / 描述 / 标签）</label>
           <input id="search-input" class="search-input" type="search" placeholder="例如：心理、工具、分享、报告" />
-          <div class="search-note" id="search-note">输入关键词可实时筛选。</div>
+        </div>
+        <div class="meta-row">
+          <span id="search-note">正在加载项目列表...</span>
+          <span id="update-time"></span>
         </div>
       </section>
 
-      <section class="section project-section" data-section="心理测评与行为分析">
-        <div class="section-head">
-          <h2 class="section-title">A. 心理测评与行为分析</h2>
-          <p class="section-desc">产品原型 / 报告系统</p>
-        </div>
-        <div class="grid">
-          <a class="card project-card" href="https://liiilhhh02.github.io/PsychologicalTest/" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="name">PsychologicalTest</div>
-              <div class="desc">多套题心理偏好测试，支持可视化报告、典型画像和导出。</div>
-              <div class="tagline">
-                <span class="tag">心理测评</span>
-                <span class="tag">报告系统</span>
-                <span class="tag">多题库</span>
-              </div>
-            </div>
-            <span class="go">打开站点</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="section project-section" data-section="工具与效率页面">
-        <div class="section-head">
-          <h2 class="section-title">B. 工具与效率页面</h2>
-          <p class="section-desc">轻量工具 / 快速访问</p>
-        </div>
-        <div class="grid">
-          <a class="card project-card" href="https://liiilhhh02.github.io/tools_html/" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="name">tools_html</div>
-              <div class="desc">日常实用网页工具集合，面向轻量任务的快速处理。</div>
-              <div class="tagline">
-                <span class="tag">工具集</span>
-                <span class="tag">效率向</span>
-              </div>
-            </div>
-            <span class="go">打开站点</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="section project-section" data-section="展示与内容分享">
-        <div class="section-head">
-          <h2 class="section-title">C. 展示与内容分享</h2>
-          <p class="section-desc">活动展示 / 演示页</p>
-        </div>
-        <div class="grid">
-          <a class="card project-card" href="https://liiilhhh02.github.io/ppt_competition_share/" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="name">ppt_competition_share</div>
-              <div class="desc">竞赛与汇报场景的页面化内容展示和在线分享入口。</div>
-              <div class="tagline">
-                <span class="tag">展示页</span>
-                <span class="tag">分享</span>
-              </div>
-            </div>
-            <span class="go">打开站点</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="section project-section" data-section="仓库入口">
-        <div class="section-head">
-          <h2 class="section-title">仓库入口</h2>
-          <p class="section-desc">全部代码仓库</p>
-        </div>
-        <div class="grid">
-          <a class="card project-card" href="https://github.com/liiilhhh02?tab=repositories" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="name">All Repositories</div>
-              <div class="desc">查看全部仓库与最近更新，进入对应代码与文档。</div>
-            </div>
-            <span class="go secondary">打开 GitHub</span>
-          </a>
-        </div>
-      </section>
-
+      <div id="sections-root" class="main"></div>
       <div id="search-empty" class="empty" hidden>没有匹配到项目，请尝试更换关键词。</div>
 
-      <p class="footer">最后更新：2026-02-26 · 持续维护中</p>
+      <p class="footer">数据来源：GitHub Pages + 每日自动同步</p>
     </main>
+
     <script>
-      const input = document.getElementById("search-input");
-      const note = document.getElementById("search-note");
-      const empty = document.getElementById("search-empty");
-      const sections = [...document.querySelectorAll(".project-section")];
-      const cards = [...document.querySelectorAll(".project-card")];
+      const USER = "liiilhhh02";
+      const DATA_URL = `pages-index.json?t=${Date.now()}`;
+
+      const CATEGORY_RULES = [
+        {
+          key: "psych",
+          title: "A. 心理测评与行为分析",
+          desc: "产品原型 / 报告系统",
+          test: (t) => /psych|心理|test|survey|question|测评/.test(t),
+        },
+        {
+          key: "tools",
+          title: "B. 工具与效率页面",
+          desc: "轻量工具 / 快速访问",
+          test: (t) => /tool|工具|util|calc|converter|效率/.test(t),
+        },
+        {
+          key: "showcase",
+          title: "C. 展示与内容分享",
+          desc: "活动展示 / 演示页",
+          test: (t) => /ppt|share|展示|show|demo|presentation/.test(t),
+        },
+      ];
+
+      const FALLBACK_DATA = {
+        generatedAt: new Date().toISOString(),
+        projects: [
+          {
+            name: "PsychologicalTest",
+            description: "多套题心理偏好测试，支持可视化报告、典型画像和导出。",
+            pageUrl: `https://${USER}.github.io/PsychologicalTest/`,
+            repoUrl: `https://github.com/${USER}/PsychologicalTest`,
+            status: 200,
+            topics: ["心理测评", "报告系统"],
+          },
+          {
+            name: "tools_html",
+            description: "日常实用网页工具集合，面向轻量任务的快速处理。",
+            pageUrl: `https://${USER}.github.io/tools_html/`,
+            repoUrl: `https://github.com/${USER}/tools_html`,
+            status: 200,
+            topics: ["工具", "效率"],
+          },
+          {
+            name: "ppt_competition_share",
+            description: "竞赛与汇报场景的页面化内容展示和在线分享入口。",
+            pageUrl: `https://${USER}.github.io/ppt_competition_share/`,
+            repoUrl: `https://github.com/${USER}/ppt_competition_share`,
+            status: 200,
+            topics: ["展示", "分享"],
+          },
+        ],
+      };
+
+      const state = {
+        projects: [],
+        keyword: "",
+      };
+
+      const searchInput = document.getElementById("search-input");
+      const searchNote = document.getElementById("search-note");
+      const updateTime = document.getElementById("update-time");
+      const sectionsRoot = document.getElementById("sections-root");
+      const searchEmpty = document.getElementById("search-empty");
 
       function normalize(text) {
         return String(text || "").trim().toLowerCase();
       }
 
-      function applySearch() {
-        const keyword = normalize(input.value);
-        let shown = 0;
-
-        cards.forEach((card) => {
-          const haystack = normalize(card.textContent);
-          const visible = !keyword || haystack.includes(keyword);
-          card.hidden = !visible;
-          if (visible) {
-            shown += 1;
-          }
-        });
-
-        sections.forEach((section) => {
-          const hasVisibleCard = [...section.querySelectorAll(".project-card")].some((card) => !card.hidden);
-          section.hidden = !hasVisibleCard;
-        });
-
-        empty.hidden = shown !== 0;
-        note.textContent = keyword ? `共匹配到 ${shown} 个项目。` : "输入关键词可实时筛选。";
+      function classify(project) {
+        const text = normalize(`${project.name} ${project.description} ${(project.topics || []).join(" ")}`);
+        for (const rule of CATEGORY_RULES) {
+          if (rule.test(text)) return rule;
+        }
+        return { key: "others", title: "D. 其他项目", desc: "待分类", test: () => true };
       }
 
-      input.addEventListener("input", applySearch);
-      applySearch();
+      function statusLabel(code) {
+        if (Number(code) >= 200 && Number(code) < 400) {
+          return { text: `在线 ${code}`, cls: "ok" };
+        }
+        return { text: `检查 ${code || "--"}`, cls: "err" };
+      }
+
+      function escapeHTML(value) {
+        return String(value || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#39;");
+      }
+
+      function render() {
+        const keyword = normalize(state.keyword);
+        const filtered = state.projects.filter((project) => {
+          if (!keyword) return true;
+          const haystack = normalize(`${project.name} ${project.description} ${(project.topics || []).join(" ")}`);
+          return haystack.includes(keyword);
+        });
+
+        const groupMap = new Map();
+        for (const project of filtered) {
+          const group = classify(project);
+          if (!groupMap.has(group.key)) {
+            groupMap.set(group.key, { ...group, items: [] });
+          }
+          groupMap.get(group.key).items.push(project);
+        }
+
+        const orderedKeys = ["psych", "tools", "showcase", "others"];
+        sectionsRoot.innerHTML = "";
+
+        for (const key of orderedKeys) {
+          const group = groupMap.get(key);
+          if (!group || group.items.length === 0) continue;
+
+          const cards = group.items
+            .map((project) => {
+              const status = statusLabel(project.status);
+              const tags = (project.topics || [])
+                .slice(0, 4)
+                .map((tag) => `<span class="tag">${escapeHTML(tag)}</span>`)
+                .join("");
+              return `
+              <article class="card">
+                <div>
+                  <div class="name-row">
+                    <div class="name">${escapeHTML(project.name)}</div>
+                    <span class="status ${status.cls}">${status.text}</span>
+                  </div>
+                  <div class="desc">${escapeHTML(project.description || "暂无描述")}</div>
+                  ${tags ? `<div class="tagline">${tags}</div>` : ""}
+                </div>
+                <div class="go-wrap">
+                  <a class="btn" href="${escapeHTML(project.pageUrl)}" target="_blank" rel="noopener noreferrer">打开站点</a>
+                  <a class="btn repo" href="${escapeHTML(project.repoUrl || `https://github.com/${USER}/${project.name}`)}" target="_blank" rel="noopener noreferrer">查看仓库</a>
+                </div>
+              </article>
+            `;
+            })
+            .join("");
+
+          const section = document.createElement("section");
+          section.className = "section";
+          section.innerHTML = `
+            <div class="section-head">
+              <h2 class="section-title">${group.title}</h2>
+              <p class="section-desc">${group.desc}</p>
+            </div>
+            <div class="grid">${cards}</div>
+          `;
+          sectionsRoot.appendChild(section);
+        }
+
+        searchEmpty.hidden = filtered.length !== 0;
+        searchNote.textContent = keyword
+          ? `共匹配到 ${filtered.length} 个项目。`
+          : `当前共收录 ${state.projects.length} 个项目。`;
+      }
+
+      async function init() {
+        let data = null;
+        try {
+          const resp = await fetch(DATA_URL, { cache: "no-store" });
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          data = await resp.json();
+        } catch (error) {
+          console.warn("加载 pages-index.json 失败，使用回退数据。", error);
+          data = FALLBACK_DATA;
+        }
+
+        const projects = Array.isArray(data.projects) ? data.projects : [];
+        state.projects = projects
+          .filter((item) => item && item.name && item.pageUrl)
+          .sort((a, b) => a.name.localeCompare(b.name));
+
+        if (data.generatedAt) {
+          updateTime.textContent = `最近更新：${new Date(data.generatedAt).toLocaleString("zh-CN")}`;
+        }
+
+        render();
+      }
+
+      searchInput.addEventListener("input", (event) => {
+        state.keyword = event.target.value || "";
+        render();
+      });
+
+      init();
     </script>
   </body>
-  </html>
+</html>
