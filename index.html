@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>liiilhhh02 · Projects</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Noto+Serif+SC:wght@500;700&display=swap");
+
+      :root {
+        --bg: #f4efe6;
+        --card: #fffaf0;
+        --ink: #2d261f;
+        --muted: #6b6258;
+        --line: #d8cdbf;
+        --accent: #b95c36;
+        --accent-soft: #f0dacd;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        font-family: "Space Grotesk", sans-serif;
+        background:
+          radial-gradient(circle at 8% 12%, #e7d6bc 0, transparent 26%),
+          radial-gradient(circle at 88% 18%, #dfc4a4 0, transparent 24%),
+          radial-gradient(circle at 70% 86%, #ebd8c4 0, transparent 28%),
+          var(--bg);
+      }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 18px 56px;
+      }
+
+      .hero {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: linear-gradient(145deg, #fff8ee 0%, #f7ecdd 100%);
+        padding: 24px 22px;
+        box-shadow: 0 10px 28px rgba(76, 53, 31, 0.08);
+        animation: rise 620ms ease-out both;
+      }
+
+      .title {
+        margin: 0;
+        font-size: clamp(28px, 5vw, 44px);
+        font-family: "Noto Serif SC", serif;
+        letter-spacing: 0.4px;
+      }
+
+      .sub {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .grid {
+        margin-top: 18px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .card {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--card);
+        padding: 14px 14px;
+        text-decoration: none;
+        color: inherit;
+        transform: translateY(14px);
+        opacity: 0;
+        animation: rise 560ms ease-out forwards;
+      }
+
+      .card:nth-child(1) { animation-delay: 60ms; }
+      .card:nth-child(2) { animation-delay: 130ms; }
+      .card:nth-child(3) { animation-delay: 200ms; }
+      .card:nth-child(4) { animation-delay: 270ms; }
+      .card:nth-child(5) { animation-delay: 340ms; }
+
+      .card:hover {
+        border-color: #c9b6a1;
+        box-shadow: 0 10px 24px rgba(72, 46, 24, 0.1);
+      }
+
+      .name {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .desc {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .go {
+        white-space: nowrap;
+        font-size: 13px;
+        border-radius: 999px;
+        border: 1px solid #d7c1ac;
+        background: var(--accent-soft);
+        color: var(--accent);
+        padding: 6px 10px;
+      }
+
+      .foot {
+        margin-top: 14px;
+        color: #766c61;
+        font-size: 13px;
+      }
+
+      @media (max-width: 680px) {
+        .card {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <h1 class="title">liiilhhh02 · 总导航页</h1>
+        <p class="sub">这里集中放你所有 GitHub Pages 项目，方便统一展示和分享。</p>
+
+        <div class="grid">
+          <a class="card" href="https://liiilhhh02.github.io/PsychologicalTest/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="name">PsychologicalTest</div>
+              <div class="desc">心理偏好测试站（多套题 + 报告）</div>
+            </div>
+            <span class="go">打开站点</span>
+          </a>
+
+          <a class="card" href="https://liiilhhh02.github.io/tools_html/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="name">tools_html</div>
+              <div class="desc">实用工具合集页面</div>
+            </div>
+            <span class="go">打开站点</span>
+          </a>
+
+          <a class="card" href="https://liiilhhh02.github.io/ppt_competition_share/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="name">ppt_competition_share</div>
+              <div class="desc">PPT 展示与分享页</div>
+            </div>
+            <span class="go">打开站点</span>
+          </a>
+
+          <a class="card" href="https://github.com/liiilhhh02" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="name">GitHub Profile</div>
+              <div class="desc">查看全部仓库与最近更新</div>
+            </div>
+            <span class="go">查看主页</span>
+          </a>
+        </div>
+
+        <p class="foot">提示：把本页部署到 `liiilhhh02.github.io` 仓库后，即可通过 `https://liiilhhh02.github.io/` 访问。</p>
+      </section>
+    </main>
+  </body>
+  </html>
