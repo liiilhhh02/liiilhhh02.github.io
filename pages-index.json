@@ -1,29 +1,4 @@
 {
-  "generatedAt": "2026-02-26T00:00:00Z",
-  "projects": [
-    {
-      "name": "PsychologicalTest",
-      "description": "多套题心理偏好测试，支持可视化报告、典型画像和导出。",
-      "pageUrl": "https://liiilhhh02.github.io/PsychologicalTest/",
-      "repoUrl": "https://github.com/liiilhhh02/PsychologicalTest",
-      "status": 200,
-      "topics": ["心理测评", "报告系统"]
-    },
-    {
-      "name": "tools_html",
-      "description": "日常实用网页工具集合，面向轻量任务的快速处理。",
-      "pageUrl": "https://liiilhhh02.github.io/tools_html/",
-      "repoUrl": "https://github.com/liiilhhh02/tools_html",
-      "status": 200,
-      "topics": ["工具", "效率"]
-    },
-    {
-      "name": "ppt_competition_share",
-      "description": "竞赛与汇报场景的页面化内容展示和在线分享入口。",
-      "pageUrl": "https://liiilhhh02.github.io/ppt_competition_share/",
-      "repoUrl": "https://github.com/liiilhhh02/ppt_competition_share",
-      "status": 200,
-      "topics": ["展示", "分享"]
-    }
-  ]
+  "generatedAt": "2026-02-27T03:36:03Z",
+  "projects": []
 }
