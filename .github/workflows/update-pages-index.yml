@@ -67,7 +67,8 @@ jobs:
 
           projects = []
           for r in repos:
-            if not r.get("public", False):
+            # REST API exposes "private", not "public".
+            if r.get("private", True):
               continue
             if not r.get("has_pages", False):
               continue
