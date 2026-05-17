@@ -1,22 +1,6 @@
 {
-  "generatedAt": "2026-05-16T04:35:53Z",
+  "generatedAt": "2026-05-17T04:59:33Z",
   "projects": [
-    {
-      "name": "ppt_competition_share",
-      "description": "经验分享 ppt",
-      "pageUrl": "https://liiilhhh02.github.io/ppt_competition_share/",
-      "repoUrl": "https://github.com/liiilhhh02/ppt_competition_share",
-      "status": 200,
-      "topics": []
-    },
-    {
-      "name": "PsychologicalTest",
-      "description": "",
-      "pageUrl": "https://liiilhhh02.github.io/PsychologicalTest/",
-      "repoUrl": "https://github.com/liiilhhh02/PsychologicalTest",
-      "status": 200,
-      "topics": []
-    },
     {
       "name": "tools_html",
       "description": "",
